@@ -1,0 +1,158 @@
+﻿<UserControl x:Class="AnimalClinic.Views.HomeView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:AnimalClinic.Views"
+             xmlns:fa="http://schemas.awesome.incremented/wpf/xaml/fontawesome.sharp"
+             xmlns:viewModel="clr-namespace:AnimalClinic.ViewModels"
+             mc:Ignorable="d"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.Resources>
+        <Style TargetType="Expander">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="Padding" Value="5"/>
+            <Setter Property="Background" Value="#EEE"/>
+        </Style>
+        <Style TargetType="Image">
+            <Setter Property="Height" Value="100"/>
+            <Setter Property="Width" Value="200"/>
+            <Setter Property="Margin" Value="5"/>
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+    </UserControl.Resources>
+    <UserControl.DataContext>
+        <viewModel:HomeViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="0 12"  VerticalAlignment="Center">
+            <Grid Width="Auto" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                
+                <!--image-->
+                <StackPanel Grid.Row="0">
+                    <TextBlock FontSize="58" FontWeight="Heavy" HorizontalAlignment="Center" Text="Animal Clinic">
+                        <TextBlock.Foreground>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,0.7">
+                                <GradientStop Color="{StaticResource secondaryBackColor1}" Offset="0"/>
+                                <GradientStop Color="{StaticResource secondaryBackColor2}" Offset="1"/>
+                            </LinearGradientBrush>
+                        </TextBlock.Foreground>
+                    </TextBlock>
+                    <Rectangle Width="600" RadiusX="10" RadiusY="10" Height="350" Stroke="{StaticResource color12}" StrokeThickness="1" >
+
+                        <Rectangle.Fill>
+                            <ImageBrush Stretch="Fill" ImageSource="/Images/AnimalClinicMain.jpg"></ImageBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+    
+                    <Separator Margin="0 10" Width="800"/>
+                    <TextBlock Width="800" TextWrapping="Wrap" HorizontalAlignment="Center" FontWeight="Medium" FontFamily="Monsterrat" FontSize="15">
+                        The most important goal of our work is the highest possible standard of veterinary care based on the best knowledge and experience of the team of doctors and modern diagnostic equipment.
+                    </TextBlock>
+                    <Separator Margin="0 10" Width="800"></Separator>
+                </StackPanel>
+                <StackPanel Grid.Row="1" Width="800" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" FlowDirection="LeftToRight">
+
+                    <StackPanel Width="260" >
+                        <fa:IconImage Icon="ShieldHeart" Width="40" Height="40" Foreground="{StaticResource color6}"/>
+                        <!--<Separator Width="40"/>-->
+                        <TextBlock Foreground="{StaticResource color6}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="14" FontWeight="Heavy" FontFamily="Monsterrat">
+                                Prevention
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontWeight="Medium" FontFamily="Monsterrat" TextWrapping="Wrap">
+        Sterilization and castration, preventive vaccinations, antiparasitic prophylaxis of internal and external parasites, preventive examination programs, care treatments
+                        </TextBlock>
+                    </StackPanel>
+
+
+                    <StackPanel Width="260" >
+                        <fa:IconImage  Icon="MagnifyingGlass" Width="40" Height="40" Foreground="{StaticResource color6}"/>
+                        <!--<Separator Width="40"/>-->
+                        <TextBlock Foreground="{StaticResource color6}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontWeight="Heavy" FontFamily="Monsterrat">
+                            Diagnostics
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontWeight="Medium" FontFamily="Monsterrat" TextWrapping="Wrap">
+                            tomographic, radiographic, ultrasound, endoscopic, laboratory, histopathological, ophthalmological, dermatological, neurological, cardiac, gynaecological and obstetric, dental
+                        </TextBlock>
+                    </StackPanel>
+                    
+                    <StackPanel  Width="260">
+                        <fa:IconImage Icon="HeartCirclePlus" Width="40" Height="40" Foreground="{StaticResource color6}" />
+                        <!--<Separator Width="40"/>-->
+                        <TextBlock Foreground="{StaticResource color6}" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontWeight="Heavy" FontFamily="Monsterrat">
+                            Treatment
+                        </TextBlock>
+                        <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontWeight="Medium" FontFamily="Monsterrat" TextWrapping="Wrap">
+                            Internal Medicine, Dermatology, Ophthalmology, Dentistry, Neurology, Orthopaedics, Endocrinology, Reproduction, General Surgery, Orthopaedic Surgery, Ophthalmic Surgery, Dental Surgery
+                        </TextBlock>
+                    </StackPanel>
+                </StackPanel>
+
+                
+                <!-- About Us Section -->
+                <StackPanel Grid.Row="2" Width="800">
+                    <Separator Width="800"/>
+                    <TextBlock Text="About Us" FontWeight="Bold" HorizontalAlignment="Center" FontSize="18"/>
+                    <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="13" FontWeight="Medium" FontFamily="Monsterrat" TextWrapping="Wrap">
+                        Animal Veterinary Clinic provides a comprehensive and professional offer of veterinary services addressed to all animal owners. The idea that guides our activities is to help animals and their owners. We offer help in the field of preventive treatment and, above all, diagnosis of animal diseases.
+
+Our specialists provide high-quality services in the field of veterinary neurology, reproduction of dogs and cats, ophthalmology and dentistry of dogs, cats and rodents. Our main specialty is the diagnosis of diseases of dogs and cats, according to the motto "We will tell you what is wrong with your dog or cat." The veterinary clinic offers the highest level of imaging and laboratory diagnostics for animals. Using modern technological solutions, we have at our disposal a CeleCT computed tomography scanner by Marconi, digital X-ray by Fuji, high-class ultrasound with Doppler, Fujinon and Storz endoscopic equipment with a visual track, and a miniVidas camera for hormone tests. The animal clinic provides prevention of infectious and parasitic diseases as well as comprehensive care for internal medicine patients with heart, digestive, respiratory and hormonal disorders.
+                    </TextBlock>
+                    <Label Height="10"/>
+                    <Button x:Name="btnOurTeam" Style="{StaticResource addButton}" Command="{Binding ShowVetView}">
+                        <TextBlock>Our Team</TextBlock>
+                        </Button>
+                    <Label Height="10"/>
+                    <Rectangle Width="700" RadiusX="10" RadiusY="10" Height="350" Stroke="{StaticResource color12}" StrokeThickness="1" >
+                        <Rectangle.Fill>
+                            <ImageBrush Stretch="Fill" ImageSource="/Images/OurTeam.jpg"></ImageBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    
+                   
+                    <Label Height="10"/>
+                </StackPanel>
+
+                <!-- FAQ Section -->
+                <StackPanel Grid.Row="3" Width="800">
+                    <Separator Width="800" Margin=" 0 10"/>
+                    <TextBlock Text="Frequently Asked Questions" FontWeight="Bold" FontSize="18" HorizontalAlignment="Center"/>
+                    <Expander Background="{StaticResource color6}" FontWeight="Medium" Header="What types of animals does your clinic treat?">
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="Our clinic specializes in the care of small to medium-sized domestic pets, including dogs, cats, rabbits, guinea pigs, and birds. We also provide services for exotic pets such as reptiles and small mammals. Please contact us for more information on the types of animals we treat."/>
+                    </Expander>
+                    <Expander Background="{StaticResource color6}" FontWeight="Medium" Header="Do I need to make an appointment to see a vet?">
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="Yes, we operate primarily by appointment to ensure each pet gets the time and attention they need. However, we do accept walk-ins for emergencies. It's best to call ahead if possible, so we can prepare for your arrival."/>
+                    </Expander>
+                    <Expander  Background="{StaticResource color6}" FontWeight="Medium" Header="What should I bring to my pet’s first appointment?">
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="For your pet's first visit, please bring any medical records you have, including vaccination history, prior treatments, and any medications your pet is currently taking. This information will help us provide the best care possible."/>
+                    </Expander>
+                    <Expander Background="{StaticResource color6}" FontWeight="Medium" Header="How often should my pet have a check-up?">
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="We recommend annual wellness exams for most pets to ensure they stay in good health. Younger animals, seniors, and pets with health issues may need more frequent check-ups. We'll work with you to determine the best schedule for your pet's needs."/>
+                    </Expander>
+                    <Expander Background="{StaticResource color6}" FontWeight="Medium" Header="What is your emergency care policy?">
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="We offer emergency services during our normal business hours. If your pet has an emergency after hours, please call our clinic number for instructions on how to proceed, as we have a veterinarian on call. In life-threatening situations, it’s best to proceed directly to the nearest animal emergency center."/>
+                    </Expander>
+                    <Expander Background="{StaticResource color6}" FontWeight="Medium" Header="Can I purchase pet medication directly from the clinic?">
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="Yes, we have a fully stocked pharmacy for the convenience of our clients. We offer a wide range of medications, including flea, tick, and heartworm preventatives, as well as prescription diets. Our staff can help you with refills and new prescriptions as part of your pet's treatment plan."/>
+                    </Expander>
+                    <Expander Background="{StaticResource color6}" FontWeight="Medium" Header="What types of payment do you accept?">
+                        <TextBlock TextWrapping="WrapWithOverflow" Text="We accept various forms of payment including cash, debit cards, credit cards, and pet insurance. Full payment is required at the time of service. If you have pet insurance, we'll provide all the necessary documentation for you to make a claim"/>
+                    </Expander>
+                    <!-- Add more FAQs as needed -->
+                    <Label Height="100"></Label>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+
+    </Grid>
+</UserControl>
